@@ -11,7 +11,7 @@ export default function LinkActive({ children, ...props }) {
   const child = typeof children === "string" ? <a>{children}</a> : Children.only(children);
 
   // Determine if the route or a child route is active
-  const isRouteActive = router.pathname === href || router.pathname.startsWith(href + "/");
+  const isRouteActive = router.asPath === href || router.asPath.startsWith(href + "/");
 
   // Add the activeClassName when the route is active
   let className = child.props.className || "";
